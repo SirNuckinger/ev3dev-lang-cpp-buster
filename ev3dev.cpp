@@ -37,15 +37,15 @@
 #include <chrono>
 #include <thread>
 #include <stdexcept>
-#include <string.h>
-#include <math.h>
+#include <cstring>
+#include <cmath>
 
 #include <dirent.h>
 #include <sys/mman.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include <errno.h>
+#include <cerrno>
 
 #ifndef SYS_ROOT
 #  define SYS_ROOT "/sys/class"
@@ -927,7 +927,7 @@ bool button::process_all() {
 //-----------------------------------------------------------------------------
 void sound::beep(const std::string &args, bool bSynchronous) {
     std::ostringstream cmd;
-    cmd << "/usr/bin/beep " << args;
+    cmd << "/usr/bin/beep " << "--device /dev/input/by-path/platform-sound-event " << args;
     if (!bSynchronous) cmd << " &";
     std::system(cmd.str().c_str());
 }

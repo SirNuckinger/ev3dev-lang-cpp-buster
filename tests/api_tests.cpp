@@ -3,7 +3,7 @@
 #include <vector>
 #include <sstream>
 #include <cstdlib>
-#include <ev3dev.h>
+#include <./ev3dev-lang-cpp/ev3dev.h>
 
 namespace ev3 = ev3dev;
 
