@@ -1,4 +1,4 @@
-#include "../ev3dev.h"
+#include "ev3dev.h"
 
 using namespace ev3dev;
 
